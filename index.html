@@ -814,7 +814,7 @@
     <div class="hero-actions">
       <a href="#portfolio" class="btn-primary">View My Work</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
-      <a href="Nicholas Iriabije VA_Portfolio.docx" download="Nicholas Iriabije VA_Portfolio.docx" class="btn-cv">
+      <a href="Nicholas_Iriabije_VA_Portfolio.docx" download="Nicholas_Iriabije_CV.docx" class="btn-cv">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download CV
       </a>
@@ -1147,26 +1147,28 @@
     </div>
   </div>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT FORM (Formspree) -->
   <div class="contact-form-wrap reveal">
-    <div id="form-body">
+    <form action="https://formspree.io/f/xvzvdobg" method="POST">
+      <input type="hidden" name="_subject" value="New Portfolio Enquiry">
+      <input type="hidden" name="_next" value="https://abije4.github.io/portfolio/#contact">
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" placeholder="Jane" required>
+          <input type="text" id="fname" name="first_name" placeholder="Jane" required>
         </div>
         <div class="form-group">
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" placeholder="Smith" required>
+          <input type="text" id="lname" name="last_name" placeholder="Smith" required>
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="jane@company.com" required>
+        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
       </div>
       <div class="form-group">
         <label for="service">Service Needed</label>
-        <select id="service">
+        <select id="service" name="service">
           <option value="" disabled selected>Select a service…</option>
           <option>Project Coordination</option>
           <option>Data Entry &amp; Research</option>
@@ -1177,23 +1179,18 @@
       </div>
       <div class="form-group">
         <label for="message">Your Message</label>
-        <textarea id="message" placeholder="Tell me about your project or role…" required></textarea>
+        <textarea id="message" name="message" placeholder="Tell me about your project or role…" required></textarea>
       </div>
-      <form action="https://formspree.io/f/https://formspree.io/f/xvzvdobg" method="POST">
+      <button type="submit" class="form-submit">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         Send Message
       </button>
-    </div>
-    <div class="form-success" id="form-success">
-      <span class="checkmark">✅</span>
-      <h4>Message Sent!</h4>
-      <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
-    </div>
+    </form>
   </div>
 
   <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
     <a href="mailto:iriabijen@gmail.com" class="btn-primary reveal">Email Me Directly</a>
-    <a href="Nicholas Iriabije VA_Portfolio.docx" download="Nicholas Iriabije VA_Portfolio.docx" class="btn-cv reveal">
+    <a href="Nicholas_Iriabije_VA_Portfolio.docx" download="Nicholas_Iriabije_CV.docx" class="btn-cv reveal">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download CV
     </a>
@@ -1206,7 +1203,7 @@
   <p>© 2025 <span>Nicholas Iriabije</span> &nbsp;·&nbsp; Virtual Assistant &amp; Project Coordinator &nbsp;·&nbsp; Ibadan, Nigeria</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1234,14 +1231,4 @@
       const success = document.getElementById('form-success');
       success.style.display = 'block';
       // Open mailto as fallback so the message actually reaches Nico
-      window.location.href = `mailto:iriabijen@gmail.com?subject=Portfolio Enquiry from ${encodeURIComponent(fname)}&body=${encodeURIComponent(message)}`;
-    }, 1000);
-  }
-  document.querySelectorAll('.services-grid, .portfolio-grid, .tools-categories').forEach(grid => {
-    [...grid.querySelectorAll('.reveal')].forEach((card, i) => {
-      card.style.transitionDelay = `${i * 0.1}s`;
-    });
-  });
-</script>
-</body>
-</html>
+      window.location.href = `mailto:iriabijen@gmail.com?subject=Portfolio Enquiry from ${encodeURIComponent(fname)}&body=${encodeURIComponent(
